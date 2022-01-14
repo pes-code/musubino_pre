@@ -4,6 +4,7 @@ include('functions.php');
 session_start();
 check_session_id();
 
+
 $pdo = connect_to_db();
 
 $sql = 'SELECT * FROM users_table';
@@ -18,15 +19,8 @@ try {
 }
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC); //fetchAll関数でtableのデータ自体を取得する
-$output = ""; //繰返し文のタグを入れる空タグ
-foreach ($result as $record) {
-    $output .= "
-    <tr>
-      <td><a href='todo_edit.php?id={$record["id"]}'>edit</a></td>
-      <td><a href='todo_delete.php?id={$record["id"]}'>delete</a></td>
-    </tr>
-  ";
-}
+
+
 
 ?>
 
@@ -45,10 +39,10 @@ foreach ($result as $record) {
         <a href='musubino_input.php?'>MUSUBINOを作成</a>
     </h1>
     <p>
-        <a href='m_user_edit.php?id={$record["id"]}'>アカウント情報変更</a>
+        <a href='m_user_edit.php?id='>アカウント情報変更</a>
     </p>
     <p>
-        <a href='m_user_delete.php?id={$record["id"]}'>退会</a>
+        <a href='m_user_delete.php?id='>退会</a>
     </p>
 </body>
 

@@ -1,15 +1,5 @@
 <?php
-include('elama_functions.php');
-
-// POSTデータ確認
-//if ( //データがない||データが空っぽだった場合は処理をエラーメッセージを出して終了するという記述
-//    !isset($_POST['medical']) || $_POST['medical'] == '' ||
-//    !isset($_POST['other']) || $_POST['other'] == '' ||
-//    !isset($_POST['name']) || $_POST['name'] == '' ||
-//    !isset($_POST['date']) || $_POST['date'] == ''
-//) {
-//    exit('Error!!');
-//}
+include('functions.php');
 
 $med1 = $_POST['med1'];
 $med2 = $_POST['med2'];
@@ -29,10 +19,10 @@ $name = $_POST['name'];
 $date = $_POST['date'];
 
 // DB接続//各種項目設定
-$pdo = connect_to_db(); //elama_functions.phpで関数を定義してある。
+$pdo = connect_to_db();
 
 // SQL作成&実行
-$sql = 'INSERT INTO elama_prototype_table (id, med1, med2, med3, med4, med5, med6, med7, med8, med9, med10, med11, med12, med13, other, name, date, created_at, updated_at) VALUES (NULL, :med1, :med2, :med3, :med4, :med5, :med6, :med7, :med8, :med9, :med10, :med11, :med12, :med13, :other, :name, :date, now(), now())';
+$sql = 'INSERT INTO musubino_project_db (id, med1, med2, med3, med4, med5, med6, med7, med8, med9, med10, med11, med12, med13, other, name, date, created_at, updated_at) VALUES (NULL, :med1, :med2, :med3, :med4, :med5, :med6, :med7, :med8, :med9, :med10, :med11, :med12, :med13, :other, :name, :date, now(), now())';
 $stmt = $pdo->prepare($sql);
 
 // バインド変数を設定//悪意あるコード入力をただの文字列に変換して防御する。
@@ -61,5 +51,5 @@ try {
     exit();
 }
 
-header('Location:elama_prototype_input.php');
+header('Location:musubino_input.php');
 exit();

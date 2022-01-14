@@ -242,7 +242,7 @@
 <!----------------------------------------------------------------------->
 
 <body>
-    <form action="elama_prototype_create.php" method="POST">>
+    <form action="musubino_create.php" method="POST">>
         <fieldset>
             <h2>入力画面</h2>
             <form>
@@ -443,7 +443,7 @@
         </fieldset>
     </form>
     </fieldset>
-    </form><a href="elama_prototype_read.php">確認画面</a>
+    </form><a href="musubino_read.php">確認画面</a>
 </body>
 
 </html>
