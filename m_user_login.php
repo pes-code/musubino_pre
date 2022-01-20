@@ -13,21 +13,18 @@
         background-size: cover;
     }
 
-    form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
     fieldset {
         background-color: whitesmoke;
+
+        position: absolute;
+        padding-top: 20px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
         width: 200px;
         height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
     }
 </style>
 

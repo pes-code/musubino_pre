@@ -22,7 +22,7 @@ $date = $_POST['date'];
 $pdo = connect_to_db();
 
 // SQL作成&実行
-$sql = 'INSERT INTO musubino_project_db (id, med1, med2, med3, med4, med5, med6, med7, med8, med9, med10, med11, med12, med13, other, name, date, created_at, updated_at) VALUES (NULL, :med1, :med2, :med3, :med4, :med5, :med6, :med7, :med8, :med9, :med10, :med11, :med12, :med13, :other, :name, :date, now(), now())';
+$sql = 'INSERT INTO musubino_tabel (id, med1, med2, med3, med4, med5, med6, med7, med8, med9, med10, med11, med12, med13, other, name, date, created_at, updated_at) VALUES (NULL, :med1, :med2, :med3, :med4, :med5, :med6, :med7, :med8, :med9, :med10, :med11, :med12, :med13, :other, :name, :date, now(), now())';
 $stmt = $pdo->prepare($sql);
 
 // バインド変数を設定//悪意あるコード入力をただの文字列に変換して防御する。
